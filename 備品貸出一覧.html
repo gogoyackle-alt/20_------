@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>備品貸出予約一覧</title>
+    <meta name="description" content="備品の貸出予約一覧" />
+    <meta name="keywords" content="長洲町生涯学習課, 備品貸出予約一覧" />
+    <link rel="stylesheet" href="./css/備品貸出一覧.css" />
+  </head>
+  <body>
+    <header>
+      <div class="left-clear-box">
+        <h2>備品利用者様</h2>
+      </div>
+      <div class="center-clear-box">
+        <h1>備品の貸出予約一覧</h1>
+      </div>
+    </header>
+
+    <main>
+      <section class="control-panel" aria-label="貸出入力">
+        <div class="field">
+          <label for="equipmentSelect">貸出備品</label>
+          <select id="equipmentSelect" aria-label="貸出備品"></select>
+        </div>
+        <div class="field">
+          <label for="userName">借用者名</label>
+          <select id="userName" aria-label="借用者名">
+            <option value="生涯学習課">生涯学習課</option>
+            <option value="総務課">総務課</option>
+            <option value="危機管理対策室">危機管理対策室</option>
+            <option value="まちづくり課">まちづくり課</option>
+            <option value="住民環境課">住民環境課</option>
+            <option value="子育て支援課">子育て支援課</option>
+            <option value="福祉介護課">福祉介護課</option>
+            <option value="健康づくり課">健康づくり課</option>
+            <option value="税務課">税務課</option>
+            <option value="建設課">建設課</option>
+            <option value="農林水産課">農林水産課</option>
+            <option value="上水道課">上水道課</option>
+            <option value="下水道課">下水道課</option>
+            <option value="学校教育課">学校教育課</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="startDateTime">借用開始日時</label>
+          <input id="startDateTime" type="datetime-local" step="600" /input>
+        </div>
+        <div class="field">
+          <label for="endDateTime">借用終了日時</label>
+          <input id="endDateTime" type="datetime-local"  step="600" /input>
+        </div>
+        <div class="toolbar">
+          <button id="addBtn" type="button">予約を追加</button>
+          <button id="printBtn" type="button" class="print-btn">印刷</button>
+        </div>
+      </section>
+
+      <section class="summary-section">
+        <p class="summary-label">貸出予約一覧</p>
+        <h2>貸出可能備品一覧</h2>
+        <div class="summary-meta">
+          <span>登録件数: <strong id="summaryCount">0</strong>件</span>
+          <span>予約重複備品: <strong id="summaryUser">1.展示パネル</strong></span>
+        </div>
+      </section>
+
+      <section id="equipmentList" class="equipment-list" aria-live="polite"></section>
+    </main>
+
+    <footer>
+      <div class="right-clear-box">
+        <h3>生涯学習課 tel:78-3276</h3>
+      </div>
+    </footer>
+
+    <script src="./js/備品貸出一覧.js"></script>
+  </body>
+</html>
