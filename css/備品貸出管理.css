@@ -1,0 +1,197 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+  --page-bg: #f5f5f2;
+  --panel-bg: #ffffff;
+  --line: #b5b5b5;
+  --accent: #0b4f8a;
+  --accent-soft: #dff1ff;
+  --text: #222222;
+}
+
+body {
+  margin: 0;
+  background: var(--page-bg);
+  color: var(--text);
+  font-family: "Yu Gothic", "YuGothic", sans-serif;
+}
+
+header {
+  width: min(1100px, calc(100% - 32px));
+  margin: 20px auto;
+  text-align: center;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(1100px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 12px 0;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1 {
+  color: var(--accent);
+}
+
+    main {
+      width: min(1100px, calc(100% - 32px));
+      margin: 0 auto 32px;
+      padding: 24px;
+      background: var(--panel-bg);
+      border-radius: 12px;
+      border: 2px solid var(--line);
+      box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    }
+
+    .control-panel {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      padding: 16px;
+      border-radius: 10px;
+      background: var(--accent-soft);
+      margin-bottom: 24px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .field label {
+      font-weight: bold;
+    }
+
+    .field input {
+      min-height: 42px;
+      padding: 8px 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .add-btn {
+      min-width: 140px;
+      height: 42px;
+      align-self: end;
+      border: none;
+      border-radius: 10px;
+      background: #2196f3;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .add-btn:hover {
+      background: #0b83e6;
+    }
+
+    .equipment-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .equipment-card {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 16px;
+      background: white;
+    }
+
+    .equipment-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .equipment-name {
+      font-size: 1.15rem;
+      font-weight: bold;
+    }
+
+    .status-select {
+      min-width: 140px;
+      padding: 8px;
+      border-radius: 6px;
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .save-btn {
+      background: #4caf50;
+      color: white;
+    }
+
+    .delete-btn {
+      background: #ef5350;
+      color: white;
+    }
+
+    .save-btn,
+    .delete-btn {
+      border: none;
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .save-btn:hover {
+      background: #3e9b42;
+    }
+
+    .delete-btn:hover {
+      background: #d32f2f;
+    }
+
+		.status-area {
+		  display: flex;
+		  align-items: center;
+		  gap: 12px;
+		  margin-top: 12px;
+		}
+
+		.status-area label {
+		  font-weight: bold;
+		  min-width: 50px;
+		}
+
+		.status-select {
+		  flex: 1;
+		}
+
+    .status-available {
+      color: #2e7d32;
+      font-weight: bold;
+    }
+
+    .status-broken {
+      color: #d62828;
+      font-weight: bold;
+    }
+
+    .status-disabled {
+      color: #666;
+      font-weight: bold;
+    }
+
+    .right-clear-box {
+      width: 48%;
+      margin-left: auto;
+    }

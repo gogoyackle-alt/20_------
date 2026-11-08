@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>備品貸出管理</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="備品の貸出不可指定並びに貸出可能備品の追加" />
+  <meta name="keywords" content="長洲町生涯学習課, 備品貸出管理" />
+  <link rel="stylesheet" href="./css/備品貸出管理.css" />
+
+</head>
+
+<body>
+
+<header>
+  <h1>備品貸出管理</h1>
+</header>
+
+<main>
+
+  <section class="control-panel">
+
+    <div class="field">
+      <label for="equipmentName">
+        新規備品名
+      </label>
+
+      <input
+        id="equipmentName"
+        type="text"
+        placeholder="例：ワイヤレスマイク③">
+    </div>
+
+    <button class="add-btn">
+      ＋ 備品追加
+    </button>
+
+  </section>
+
+  <section class="equipment-list">
+  </section>
+
+    </main>
+
+    <footer>
+      <div class="right-clear-box">
+        <h3>生涯学習課 内線：372,371,370</h3>
+      </div>
+    </footer>
+
+    <script src="./js/備品マスタ.js"></script>
+    <script src="./js/備品貸出管理.js"></script>
+  </body>
+</html>

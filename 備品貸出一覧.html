@@ -44,24 +44,38 @@
         </div>
         <div class="field">
           <label for="startDateTime">借用開始日時</label>
-          <input id="startDateTime" type="datetime-local" step="600" /input>
+          <input id="startDateTime" type="datetime-local" step="600" />
         </div>
         <div class="field">
           <label for="endDateTime">借用終了日時</label>
-          <input id="endDateTime" type="datetime-local"  step="600" /input>
+          <input id="endDateTime" type="datetime-local"  step="600" />
         </div>
         <div class="toolbar">
-          <button id="addBtn" type="button">予約を追加</button>
-          <button id="printBtn" type="button" class="print-btn">印刷</button>
+          <button id="addBtn" type="button">
+            ＋ 予約を追加
+          </button>
+          <button id="printBtn" type="button" class="print-btn">
+            🖨 印刷
+          </button>
         </div>
       </section>
 
       <section class="summary-section">
-        <p class="summary-label">貸出予約一覧</p>
-        <h2>貸出可能備品一覧</h2>
+        <h2 class="summary-label">
+          備品貸出予約一覧
+        </h2>
         <div class="summary-meta">
           <span>登録件数: <strong id="summaryCount">0</strong>件</span>
-          <span>予約重複備品: <strong id="summaryUser">1.展示パネル</strong></span>
+        </div>
+        <div class="duplicate-summary">
+          <span>
+            予約重複備品：
+            <strong id="summaryUser">0件</strong>
+          </span>
+
+          <div id="duplicateList" class="duplicate-list">
+            なし
+          </div>
         </div>
       </section>
 
@@ -70,7 +84,7 @@
 
     <footer>
       <div class="right-clear-box">
-        <h3>生涯学習課 tel:78-3276</h3>
+        <h3>生涯学習課 内線：372,371,370</h3>
       </div>
     </footer>
 

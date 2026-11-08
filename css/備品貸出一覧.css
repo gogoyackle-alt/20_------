@@ -19,7 +19,15 @@ body {
   color: var(--text);
 }
 
-header,
+header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: min(1100px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 12px 0;
+}
+
 footer {
   display: flex;
   align-items: center;
@@ -58,15 +66,13 @@ h3 {
 }
 
 .left-clear-box {
-  width: 32%;
-  font-size: clamp(1.1rem, 1.4vw, 1.8rem);
+  width: auto;
 }
-
 .center-clear-box {
-  width: 36%;
-  font-size: clamp(1.3rem, 1.8vw, 2rem);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
-
 .right-clear-box {
   width: 48%;
   margin-left: auto;
@@ -85,16 +91,10 @@ main {
 
 .control-panel {
   display: grid;
-  grid-template-columns: repeat(4, minmax(120px, 1fr));
+  grid-template-columns:
+    repeat(4, minmax(150px, 1fr));
   gap: 16px;
-  align-items: end;
-  padding: 16px;
-  margin-bottom: 24px;
-  background: var(--accent-soft);
-  border: 1px solid #c8dbef;
-  border-radius: 10px;
 }
-
 .field {
   display: flex;
   flex-direction: column;
@@ -143,27 +143,124 @@ input:focus {
 }
 
 .toolbar {
+  grid-column: 1 / -1;
+
   display: flex;
-  justify-content: flex-end;
-  gap: 12px;
+  justify-content: center;
+
+  gap: 20px;
+  margin-top: 8px;
 }
 
+/* ボタン共通 */
 button {
-  padding: 10px 18px;
+  min-width: 150px;
+  height: 48px;
+
+  padding: 0 20px;
+
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
+
   cursor: pointer;
+
+  font-size: 0.95rem;
   font-weight: 700;
+
+  white-space: nowrap;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+
+  box-shadow:
+    0 3px 8px rgba(0,0,0,0.15);
 }
 
-#applyBtn {
-  background: var(--accent);
-  color: #fff;
+/* 予約追加 */
+#addBtn {
+  background: #2196f3;
+  color: #ffffff;
 }
 
+#addBtn:hover {
+  background: #0b83e6;
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 5px 12px rgba(51,153,255,0.4);
+}
+
+/* 印刷 */
 .print-btn {
-  background: #e3f1d9;
-  color: #1b4d1b;
+  background: #4caf50;
+  color: #ffffff;
+}
+
+.print-btn:hover {
+  background: #3e9b42;
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 5px 12px rgba(53,196,106,0.4);
+}
+
+#addBtn:active,
+.print-btn:active {
+  transform: translateY(0);
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.edit-btn {
+  min-width: 80px;
+  height: 30px;
+
+  background: #ffb74d;
+  color: #fff;
+
+  border: none;
+  border-radius: 6px;
+
+  font-size: 0.75rem;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.edit-btn:hover {
+  background: #fb8c00;
+}
+
+.delete-btn {
+  min-width: 80px;
+  height: 30px;
+
+  background: #ef5350;
+  color: #fff;
+
+  border: none;
+  border-radius: 6px;
+
+  font-size: 0.75rem;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background: #d32f2f;
+}
+
+option:disabled{
+    color:#999;
+    background:#eeeeee;
 }
 
 .summary-section {
@@ -172,11 +269,11 @@ button {
 }
 
 .summary-label {
-  color: var(--muted);
-  font-size: 0.9rem;
-  letter-spacing: 0.12em;
   text-align: center;
-  margin-bottom: 8px;
+  color: var(--accent);
+  margin-bottom: 12px;
+  font-size: 1.6rem;
+  font-weight: 700;
 }
 
 .summary-meta {
@@ -271,6 +368,32 @@ button {
   background: #fafafa;
   border-style: dashed;
   text-align: center;
+}
+
+.duplicate-equipment {
+  color: #d62828;
+  font-weight: bold;
+}
+
+.duplicate-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.duplicate-list {
+  color: #d62828;
+  font-weight: bold;
+  line-height: 1.8;
+  background: #fff3f3;
+  border: 1px solid #ffcaca;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.duplicate-item {
+  display: inline-block;
+  margin-right: 12px;
 }
 
 @media (max-width: 760px) {
